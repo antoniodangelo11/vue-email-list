@@ -34,8 +34,17 @@
     <style>[v-cloak] {display: none;}</style>
 </head>
 <body>
-   <div id="app">
-        
+   <div id="app" v-cloak>
+        <button @click="getRandomEmail">Generate</button>
+        <ul>
+            <li 
+                v-for="email in randomEmail"
+                :key="index"
+                v-show="randomEmail.length == 10"
+            >
+            {{ email }}
+            </li>
+        </ul>
    </div> 
 </body>
 </html>
